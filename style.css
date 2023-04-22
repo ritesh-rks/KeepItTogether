@@ -1,0 +1,399 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color:#f2e9e4;
+}
+/* heanding and navigation */
+
+.heading{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px;
+    background-color: #4a4e69;
+}
+
+.heading.active{
+    display: flex;
+}
+
+h1{
+    color: #FDF5E6;
+}
+
+.navbar {
+    display: none;
+    padding: 10px;
+   
+}
+
+.navbar ul {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: 30vh;
+    list-style-type: none;
+    text-align: center;
+   
+}
+
+.navbar ul li {
+    border-bottom: 1px solid #4a4e69;
+    padding: 5px;
+}
+
+.navbar ul li a {
+    color: #000;
+    text-decoration: none;
+    
+}
+
+.navbar ul li .home{
+    color: #8ac926;
+}
+
+/* Navigation Icon */
+
+
+.notesIcon {
+    display: flex;
+    align-items: center;
+}
+
+.notesIcon i{
+    margin-right: 9px;
+    color: #FDF5E6; 
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.home:hover{
+    color: #8ac926;
+}
+
+.deletedIcon:hover{
+    color:#e71d36;
+}
+
+.archive:hover{
+    color:#F7CD2E;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.navbar .mobileHome{
+    color: #8ac926;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.navbar .mobiledeleteFolder{
+    color:#e71d36;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.navbar .mobileArchive{
+    color:#F7CD2E;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+
+/* section */
+
+.takeNoteButton{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.takeNote{
+    padding: 5px 10px;
+    width: 30%;
+    border: 1px solid #4a4e69;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    color: #4a4e69;
+    font-weight: bold;
+    text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+
+/* take a not card*/
+
+#displayCard{
+    display: none;
+}
+.cardSection{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 250px;
+    margin: 5px auto;
+    border: 1px solid #4a4e69;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#title, #takeNoteSection
+{
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 5px;
+    color: #4a4e69;
+
+}
+#title{
+    font-weight: bold;
+}
+
+#title::placeholder{
+    color: #4a4e69;
+}
+
+ #takeNoteSection::placeholder{
+    color: #4a4e69;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#addNote, #close{
+    padding: 5px 9px;
+    background-color:#4a4e69;
+    color:#f2e9e4 ;
+    border: none;
+    border-radius: 5px;
+}
+
+/* add new note cards */
+
+#noteCard{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.notesSection{
+    margin-top: 5rem;
+    width: 300px;
+    min-height: 30vh;
+    border: 1px solid #4a4e69;
+    margin-left: 15px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.notesSection:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border: none;
+}
+
+
+/* new note text area */
+
+#cardDescription{
+    width: 290px;
+    min-height: 30vh;
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+ /* For webkit-based browsers */
+ ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #4a4e69;
+  }
+
+  /* For Firefox */
+  input[type="text"]::-moz-scrollbar {
+    width: 10px;
+  }
+
+  input[type="text"]::-moz-scrollbar-thumb {
+    background-color: #4a4e69;
+  }
+
+/* new notesection icon */
+
+.icon{
+    display: flex;
+    flex-direction:row-reverse;
+}
+.icon i{
+    margin-right: 9px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.deletedCard{
+    color:#e71d36 ;
+
+}
+
+
+.deletedCard:hover{
+    font-size: 1.4rem;
+}
+
+.editCard{
+    color:#a7c957;
+}
+
+.editCard:hover{
+    font-size: 1.4rem;
+}
+
+.archiveCard{
+    color:#004e98;
+}
+
+.archiveCard:hover{
+     font-size: 1.4rem;
+}
+
+/* deleted notes and archive notes */
+
+
+
+#deletedNotesContainer, #archivedNotesContainer{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.deleteSection, .archivedNotesSection{
+    margin-top: 5rem;
+    width: 300px;
+    min-height: 30vh;
+    border: 1px solid #4a4e69;
+    margin-left: 15px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.deleteSection:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border: none;
+}
+
+.archivedNotesSection:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border: none;
+}
+
+/* resrore icon */
+
+.restoreCard{
+    color: #52b788;
+    border: 1px solid #4a4e69;
+    padding: 6px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 7px;
+}
+.restoreCard:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border: none;
+}
+
+.clearButton{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4rem;
+}
+
+.clearButton button{
+    padding: 5px 12px;
+     background-color: #4f772d;
+     border: none;
+     border-radius: 5px;
+     color:#FDF5E6 ;
+     font-size: 1.1rem;
+}
+
+.clearButton button:hover{
+    background-color: #31572c;
+}
+
+/* CSS for mobile view */
+@media (max-width: 425px) {
+   .notesIcon{
+    display: none;
+   }
+
+   h1{
+    font-size: 20px;
+   }
+
+   .takeNote{
+    width: auto;
+    margin-top: 1rem;
+   }
+   .cardSection{
+    width: auto;
+   }
+
+   .deleteSection, .archivedNotesSection, .notesSection{
+    width: auto;
+   }
+   .notesSection{
+    margin-left: 0px;
+    padding: 5px;
+   }
+
+    .navbarToggle {
+        display: block;
+    }
+
+    .navbar ul{
+       display: flex;
+    }
+
+    .navbarToggle span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #f2e9e4;
+        margin-bottom: 5px;
+    }
+
+    .navbarToggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbarToggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbarToggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+@media (max-width: 340px) {
+
+    #cardDescription{
+        width: 250px;
+    }
+}
+
+

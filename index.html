@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title -->
+    <title>KeepItTogether</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- heading and navigation -->
+    <div class="mainHead">
+    <div class="heading">
+        <h1>KeepItTogether</h1>
+        <div class="navbarToggle" id="navbarToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- icons -->
+        <div class="notesIcon">
+            <i title="Home Page" class="fa-solid fa-house home"></i>
+            <i title="Bin" class="fa-solid fa-trash deletedIcon"></i>
+            <i title="Archive" class="fa-solid fa-file archive"></i>
+        </div>
+    </div>
+
+    <!-- for mobile viw -->
+
+    <nav class="navbar" id="navbar">
+        <ul>
+            <li><a class="mobileHome" href="#" title="Home Page">Home</a></li>
+            <li  ><a class="mobiledeleteFolder"  href="#" title="Bin">Bin</a></li>
+            <li><a class="mobileArchive" href="#" title="Archive">Archive</a></li>
+        </ul>
+    </nav>
+</div>
+
+    <!-- section and card -->
+    <div class="section">
+
+        <!--display delted notes  -->
+        <div class="mainDeleteSection">
+            <h2 class="deleteHeading" style="display: none; text-align: center; margin-top: 2rem; color: #e71d36;">Deleted Notes!</h2>
+            <div class="clearButton">
+            <button style="display: none;" class="clearAll">Clear All</button>
+        </div>
+        <div id="deletedNotesContainer">
+        </div>
+    </div>
+
+    <!-- displaying archive notes -->
+
+    <div class="mainArchiveSection">
+        <h2 class="archiveHeading" style="display: none; text-align: center; margin-top: 2rem; color: #6a4c93;">Archived Notes!</h2>
+        <div id="archivedNotesContainer"></div>
+    </div> 
+
+    <!-- taking a new note button -->
+        <div id="displaytakeNoteButton" class="takeNoteButton">
+            <input class="takeNote" type="button" value="Take a Note....">
+        </div>
+
+        <!--  createing a new note -->
+        <div id="displayCard" class="cardSection">
+            <textarea type="text" name="name" id="title" placeholder="Title"></textarea>
+            <span id="titleError" style="color: red;"></span>
+            <textarea name="" id="takeNoteSection" cols="30" rows="10" placeholder="Take Note.."></textarea>
+            <span id="textError" style="color: red;"></span>
+            <div class="buttons">
+            <button id="addNote">Add Note</button>
+            <button id="close">Close</button>
+        </div>
+        </div>
+
+        <!-- displaying a new note -->
+
+        <div id="noteCard">
+        
+         </div>
+
+
+    </div>
+
+    
+
+<!-- Js -->
+    <script src="index.js"></script>
+</body>
+</html>
