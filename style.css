@@ -81,9 +81,8 @@ h1{
 }
 
 .archive:hover{
-    color:#F7CD2E;
+    color:#0077b6;
     font-weight: bold;
-    font-size: 1.3rem;
 }
 
 .navbar .mobileHome{
@@ -236,9 +235,11 @@ h1{
 .icon{
     display: flex;
     flex-direction:row-reverse;
+    align-items: center;
+    gap: 12px;
 }
 .icon i{
-    margin-right: 9px;
+    /* margin-right: 9px; */
     margin-top: 5px;
     cursor: pointer;
 }
@@ -299,7 +300,7 @@ h1{
     border: none;
 }
 
-/* resrore icon */
+/* restrore icon */
 
 .restoreCard{
     color: #52b788;
@@ -334,6 +335,8 @@ h1{
 }
 
 /* CSS for mobile view */
+
+
 @media (max-width: 425px) {
    .notesIcon{
     display: none;
@@ -358,6 +361,7 @@ h1{
     margin-left: 0px;
     padding: 5px;
    }
+
 
     .navbarToggle {
         display: block;

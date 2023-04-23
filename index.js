@@ -1,3 +1,5 @@
+// Declare and initialize variables for DOM elements
+
 const displaytakeNoteButton = document.getElementById('displaytakeNoteButton');
 const displayCard = document.getElementById('displayCard');
 const close = document.getElementById('close');
@@ -11,47 +13,74 @@ const archiveHeading = document.querySelector('.archiveHeading');
 const clearAll = document.querySelector('.clearAll');
 const mobiledeleteFolder = document.querySelector('.mobiledeleteFolder');
 const mobileHome = document.querySelector('.mobileHome');
-const mobileArchive = document.querySelector('.mobileArchive')
+const mobileArchive = document.querySelector('.mobileArchive');
+
 // JavaScript for toggling the mobile menu
-var navbarToggle = document.getElementById('navbarToggle');
-var navbar = document.getElementById('navbar');
+var navbarToggle = document.getElementById('navbarToggle'); 
+var navbar = document.getElementById('navbar'); 
+const navbarLinks = navbar.getElementsByTagName('a'); 
+
+// Adding event listener for toggling the mobile menu
 
 navbarToggle.addEventListener('click', function() {
-    navbarToggle.classList.toggle('active');
-    if (navbar.style.display === 'flex') {
-        navbar.style.display = 'none';
+    navbarToggle.classList.toggle('active');  
+    if (navbar.style.display === 'flex') {  
+        navbar.style.display = 'none';  
     } else {
-        navbar.style.display = 'flex';
+        navbar.style.display = 'flex'; 
     }
 });
 
+// Add event listener for closing the mobile menu when a navigation link is clicked
+
+for (let i = 0; i < navbarLinks.length; i++) {
+    navbarLinks[i].addEventListener('click', function() {
+        navbarToggle.classList.remove('active');
+        navbar.style.display = 'none';
+    });
+}
+
+// Array for storing deleted notes data retrieved from localStorage, or an empty array if localStorage is empty
 
 const deletedNotesContainer = document.getElementById('deletedNotesContainer');
 let deletedNotes = JSON.parse(localStorage.getItem('deletedNotes')) || [];
 
+// Array for storing archived notes data retrieved from localStorage, or an empty array if localStorage is empty
+
 const archivedNotesContainer = document.getElementById('archivedNotesContainer');
 let acrchiveNotes = JSON.parse(localStorage.getItem('acrchiveNotes')) || [];
+
+// Add event listener for displaying take note card when "displaytakeNoteButton" is clicked
 
 displaytakeNoteButton.addEventListener("click", () => {
     displayCard.style.display = 'flex';
     displaytakeNoteButton.style.display = 'none';
 })
 
+// Add event listener for closing the take note card when "close" button is clicked
+
 close.addEventListener('click', () => {
     displaytakeNoteButton.style.display='block';
     displayCard.style.display = 'none';
 })
 
+// event listener for reloading the page when "home" button is clicked
+
 home.addEventListener('click', () => {
     location.reload();    
 });
+
+// event listener for reloading the page when "mobileHome" button is clicked
 
 mobileHome.addEventListener('click', () => {
     location.reload();
 });
 
+// Declare an empty array "notes" to store notes data
+
 let notes = [];
 
+// Define a function "updateCardContainer" that updates the UI with card elements based on the data in the "notes" array
 
 const updateCardContainer = () => {
     // Clear card container
@@ -64,7 +93,7 @@ const updateCardContainer = () => {
         notesHTML += `
         <div class="notesSection">
         <div class="icon">
-            <i title="Delete" class="fa-solid fa-minus deletedCard" data-index="${i}"></i>
+            <i title="Delete" class="fa-solid fa-delete-left deletedCard" data-index="${i}"></i>
             <i title="Edit" class="fa-solid fa-pen-to-square editCard"></i>
             <i title="Archive" class="fa-solid fa-box-archive archiveCard" data-index="${i}"></i>
         </div>
